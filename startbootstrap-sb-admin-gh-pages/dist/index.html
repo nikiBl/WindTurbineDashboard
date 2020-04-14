@@ -132,9 +132,9 @@
                             <!-- turbine cards -->
                             <!-- you want to pass the name of the turbine as a parameter so you can render it in the other page -->
                             <div class="col-xl-3 col-md-6">
-                                <div class="card bg-success text-white mb-4">
+                                <div class="card bg-success text-white mb-4" id="card-container1">
                                     <div class="card-body" id = "turbine1"> Turbine 1
-                                        <div><font size="-1">Current temperature:</font></div>
+                                        <div id="current-temp1"><font size="-1">Current temperature:</font></div>
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="tdetails.html">View Details</a>
@@ -143,7 +143,7 @@
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
+                                <div class="card bg-success text-white mb-4">
                                     <div class="card-body" id = "turbine2"> Turbine 2
                                         <div><font size="-1">Current temperature:</font></div>
                                     </div>
@@ -154,7 +154,7 @@
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
-                                <div class="card bg-warning text-white mb-4">
+                                <div class="card bg-success text-white mb-4">
                                     <div class="card-body" id = "turbine3"> Turbine 3
                                         <div><font size="-1">Current temperature:</font></div>
                                     </div>
@@ -165,7 +165,7 @@
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
-                                <div class="card bg-warning text-white mb-4">
+                                <div class="card bg-success text-white mb-4">
                                     <div class="card-body" id = "turbine4"> Turbine 4
                                         <div><font size="-1">Current temperature:</font></div>
                                     </div>
@@ -176,7 +176,7 @@
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
+                                <div class="card bg-success text-white mb-4">
                                     <div class="card-body" id = "turbine5"> Turbine 5
                                         <div><font size="-1">Current temperature:</font></div>
                                     </div>
@@ -221,8 +221,8 @@
         <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
         <script src="assets/demo/datatables-demo.js"></script>
-
-
+        <script src="js/currentTempTurbine1.js"></script>
+        <script src="js/sendFormTurbine1.js"></script>
        
     
     </body>

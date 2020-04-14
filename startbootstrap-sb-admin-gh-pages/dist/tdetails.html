@@ -168,13 +168,13 @@
                 -->
                 <br>
                 <label for="ok">Turbine is ok</label>
-                <input type="radio" id="ok" name="status" value="ok">
+                <input type="radio" id="ok" name="status">
                 <br>
                 <label for="notok">Turbine is not ok</label>
                 <input type="radio" id="notok" name="status" value="not ok">
                 <br>
                 Fill Report
-                <textarea class="textboxreport"> </textarea><br>
+                <textarea class="textboxreport" id="textboxreport"> </textarea><br>
                 <submit id="submitbutton" class="submitbutton" style:"bottom:5px">Submit</submit>
             </form>
         </div>
@@ -187,9 +187,10 @@
             document.getElementById('close').addEventListener('click', function(){
                 document.querySelector('.bg-modal').style.display = 'none';
             });
-            document.getElementById('submitbutton').addEventListener('click', function(){
-                document.querySelector('.bg-modal').style.display = 'none';
-            });
+            // document.getElementById('submitbutton').addEventListener('click', function(){
+            //     document.querySelector('.bg-modal').style.display = 'none';
+                
+            // });
 
         </script>
 
@@ -202,6 +203,7 @@
         <script src="assets/demo/chart-area-demo.js"></script>
         <script src="assets/demo/chart-bar-demo.js"></script>
         <script src="assets/demo/chart-pie-demo.js"></script>
+        <script src="js/sendFormTurbine1.js"></script>
     </body>
 
 

@@ -11,46 +11,11 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
-        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html">iFarmers</a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button
-            ><!-- Navbar Search-->
-            <div class="container">
-                
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                  <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="#">Home
-                            <span class="sr-only">(current)</span>
-                          </a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Services</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Contact Us</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            <!-- Navbar-->
-            <ul class="navbar-nav ml-auto ml-md-0">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="#">Settings</a><a class="dropdown-item" href="#">Activity Log</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="login.html">Logout</a>
-                    </div>
-                </li>
-            </ul>
-            
-        </nav>
+       
 
         <!-- sidebar -->
         <div id="layoutSidenav">
+
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
@@ -182,32 +147,21 @@
             </div>
         </div>
 
-        <!-- modal form -->
-        <div class="bg-modal">
-            <form class="modal-content">
-                <div class="fontchange">Change Status</div>
-                <div id="close" class="close">+</div>
 
-                <!-- if the current status is orange, then make it so you can select green or red
-                     if it red then make it so you can only select green
-                -->
-                <br>
-                <label for="ok">Turbine is ok</label>
-                <input type="radio" id="ok" name="status">
-                <br>
-                <label for="notok">Turbine is not ok</label>
-                <input type="radio" id="notok" name="status" value="not ok">
-                <br>
-                <label for="itime">Initial time of failure</label>
-                <input type="text" id="itime"></input>
-                <label for="itime">End time of failure</label>
-                <input type="text" id="etime"></input>
+          
 
-                Fill Report
-                <textarea class="textboxreport" id="textboxreport"> </textarea><br>
-                <submit id="submitbutton" class="submitbutton" style:"bottom:5px">Submit</submit>
-            </form>
+    <iframe    src="http://localhost:13155/public/question/41e122ec-decd-4bb9-8598-2549f600f521"    frameborder="0"    width="800"    height="600"    allowtransparency></iframe>
+    <iframe    src="http://localhost:13155/public/dashboard/51bf6ba2-fbb7-427f-a249-80592a53b53a"    frameborder="0"    width="800"    height="600"    allowtransparency></iframe>
+     <iframe    src="http://localhost:13155/public/question/a73995e4-007c-4584-b8ce-a55e80db68ca"    frameborder="0"    width="800"    height="600"    allowtransparency></iframe>
+     <iframe    src="http://localhost:13155/public/question/760aecc4-5439-42bd-afd0-93ea4963787c"    frameborder="0"    width="800"    height="600"    allowtransparency></iframe>
+
+
+   
+</div>
+</body>
+           
         </div>
+
 
         <script>
             document.getElementById('statusbutton').addEventListener('click', function(){

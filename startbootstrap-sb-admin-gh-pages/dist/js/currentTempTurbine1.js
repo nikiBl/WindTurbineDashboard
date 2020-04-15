@@ -23,24 +23,34 @@ function thresholdCheck(temp, id){
     .then(response => {
         return response.json();
     })
-    // .then(a => {
-    //     document.getElementById('current-temp1').innerHTML = "Current temperature: "+floatNum;
-    //     return a;
-    // })
     .then(responseData => {
         for(var i = 0; i < responseData.length; i++) {
             var obj = responseData[i];
             console.log("hi "+obj.id);
+            // TODO: MAKE SURE YOU UPDATE THE BACKEND SO IT IS ALSO ORANGE!!
             console.log(document.getElementById("card-container1").className == "card bg-success text-white mb-4");
             if(obj.id == 1 && document.getElementById("card-container1").className == "card bg-success text-white mb-4"
-                && floatNum >= 10){
+                && floatNum >= 25){
                     document.getElementById("card-container1").className = "card bg-warning text-white mb-4";
+                    fetch('https://us-central1-my-iot-273820.cloudfunctions.net/updateTurbineStatus?id=1&st=orange');
                     alert("Threshold reached for turbine 1");
-            }
+                    // send an email
+                    Email.send({
+                        SecureToken: "7a2715d0-6e82-49ef-829b-f1f90eb4b2a9",
+                        Username : "timtestyeo@gmail.com",
+                        Password : "Abcd1234?",
+                        To : 'timtestyeo@gmail.com',
+                        From : "timtestyeo@gmail.com",
+                        Subject : "This is the subject",
+                        Body : "There is a problem with turbine 1"
+                    }).then(
+                        message => alert(message)
+                    );
+                }
         }
-
     })
 }
+
 
 
 function setColour(){

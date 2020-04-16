@@ -30,7 +30,7 @@ function thresholdCheck(temp, id){
             // TODO: MAKE SURE YOU UPDATE THE BACKEND SO IT IS ALSO ORANGE!!
             console.log(document.getElementById("card-container1").className == "card bg-success text-white mb-4");
             if(obj.id == 1 && document.getElementById("card-container1").className == "card bg-success text-white mb-4"
-                && floatNum >= 25){
+                && floatNum >= 40){
                     document.getElementById("card-container1").className = "card bg-warning text-white mb-4";
                     fetch('https://us-central1-my-iot-273820.cloudfunctions.net/updateTurbineStatus?id=1&st=orange');
                     alert("Threshold reached for turbine 1");

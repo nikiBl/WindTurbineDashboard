@@ -8,6 +8,7 @@ const getData = () => {
             // arr[0] is the latest element
             console.log(responseData[0].temp_value);
             document.getElementById('current-temp1').innerHTML = "Current temperature: "+responseData[0].temp_value;
+
             thresholdCheck(responseData[0].temp_value, responseData[0].id);
         })
         // enable to constantly fetch
@@ -46,7 +47,20 @@ function thresholdCheck(temp, id){
                     }).then(
                         message => alert(message)
                     );
-                }
+            }
+            if(floatNum == -999){
+                Email.send({
+                    SecureToken: "7a2715d0-6e82-49ef-829b-f1f90eb4b2a9",
+                    Username : "timtestyeo@gmail.com",
+                    Password : "Abcd1234?",
+                    To : 'timtestyeo@gmail.com',
+                    From : "timtestyeo@gmail.com",
+                    Subject : "Disconnected Sensor",
+                    Body : "Turbine 1's sensor disconnected!"
+                }).then(
+                    message => alert(message)
+                );
+            }
         }
     })
 }
@@ -86,4 +100,4 @@ function setColour(){
 
 
 setColour();
-getData();
+// getData();

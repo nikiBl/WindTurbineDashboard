@@ -187,15 +187,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-xl-6">
-                                <div class="card mb-4">
-                                    <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Area Chart Example</div>
-                                    <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                         
                 </main>
                 <footer class="py-4 bg-light mt-auto">
@@ -237,6 +229,8 @@
                         // arr[0] is the latest element
                         console.log(responseData[0].temp_value);
                         document.getElementById('current-temp1').innerHTML = "Current temperature: "+responseData[0].temp_value;
+                        // document.getElementById('current-temp1').innerHTML = "Current temperature: "+36;
+
                         thresholdCheck(responseData[0].temp_value, responseData[0].id);
                     })
                     // enable to constantly fetch
@@ -248,6 +242,7 @@
             function thresholdCheck(temp, id){
                 console.log("hello world");
                 var floatNum = parseFloat(temp);
+                // floatNum = parseFloat(-999);
                 fetch('https://us-central1-my-iot-273820.cloudfunctions.net/getTurbines')
                 .then(response => {
                     return response.json();
@@ -259,7 +254,8 @@
                         // TODO: MAKE SURE YOU UPDATE THE BACKEND SO IT IS ALSO ORANGE!!
                         console.log(document.getElementById("card-container1").className == "card bg-success text-white mb-4");
                         if(obj.id == 1 && document.getElementById("card-container1").className == "card bg-success text-white mb-4"
-                            && floatNum >= 25){
+                            && floatNum >= 50){
+                                console.log("changed something with card colour");
                                 document.getElementById("card-container1").className = "card bg-warning text-white mb-4";
                                 fetch('https://us-central1-my-iot-273820.cloudfunctions.net/updateTurbineStatus?id=1&st=orange');
                                 alert("Threshold reached for turbine 1");
@@ -275,7 +271,24 @@
                                 }).then(
                                     alert("Email has been sent")
                                 );
-                            }
+                        }
+                        // checking for disconnection
+                        if(obj.id == 1 && floatNum == -999){
+                            // insert value so it doesn't spam mail
+                            fetch("https://us-central1-my-iot-273820.cloudfunctions.net/insertTemperature?id=1&temp=-1000");
+                            Email.send({
+                                SecureToken: "7a2715d0-6e82-49ef-829b-f1f90eb4b2a9",
+                                Username : "timtestyeo@gmail.com",
+                                Password : "Abcd1234?",
+                                To : 'timtestyeo@gmail.com',
+                                From : "timtestyeo@gmail.com",
+                                Subject : "Disconnected Sensor",
+                                Body : "Turbine 1's sensor disconnected!"
+                            }).then(
+                                message => alert(message)
+                            );
+                            break;
+                        }
                     }
                 })
             }

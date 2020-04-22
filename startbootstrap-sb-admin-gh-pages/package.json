@@ -39,7 +39,8 @@
         "url": "https://github.com/BlackrockDigital/startbootstrap-sb-admin.git"
     },
     "dependencies": {
-        "bootstrap": "4.4.1"
+        "bootstrap": "4.4.1",
+        "jsonwebtoken": "^8.5.1"
     },
     "devDependencies": {
         "autoprefixer": "9.7.4",
